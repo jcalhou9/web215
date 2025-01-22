@@ -1,0 +1,133 @@
+/* Jeremy Calhoun */
+/* WEB215-N801 Spring 25 */
+
+:root {
+    --header-footer-text: #fffbde;
+    --header-footer-background: #070351;
+    --body-background: linear-gradient(#00e9ff7d 20%, #00ffbb7d, #00e9ff7d 75%);
+    --main-text: #070351;
+}
+
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+    padding: 0;
+    background: var(--body-background);
+}
+
+/*--------------- header------------- */
+header{
+    display: flex;
+    background-color: var(--header-footer-background);
+    width: 100%;
+    flex-wrap: wrap;
+    color: var(--header-footer-text);
+}
+
+header{
+    justify-content: space-between;
+    padding: 0;
+}
+
+.page-heading {
+    margin: 1ch;
+    padding: 0;
+    color: var(--header-footer-text);
+}
+
+.nav-bar{
+    display: flex;
+    margin-right: 1ch;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-bar li{
+    padding: 1ch 1ch; 
+}
+
+.nav-bar a{
+    color: var(--header-footer-text);
+}
+
+/* ----------------main------------- */
+
+main{
+    text-align: center;
+    display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+    max-width: 80%;
+    margin-left: 10%;
+    color: var(--main-text);
+}
+
+main ul{
+    text-align: left;
+    max-width: 80%;
+    margin-left: 10%;
+    list-style-type: disc;
+}
+
+main ol{
+    list-style-type: circle;
+    margin: 1ch;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*---------------- footer -----------*/
+footer{
+    background-color: var(--header-footer-background);
+    text-align: center;
+}
+
+footer p {
+    padding: 0;
+    margin: 0 0 1ch 0;
+}
+
+footer a, footer p{
+    color: var(--header-footer-text);
+}
+
+.nav-links {
+    list-style-type: none;
+    padding-bottom: 1ch;
+    max-width: 70%;
+    margin: 1ch auto;
+    border-bottom: 2px solid white;
+}
+
+.nav-links li{
+    display: inline-flex;
+    padding: 1ch 1ch; 
+}
+
+.nav-links a {
+    color: var(--header-footer-text);
+}
+
+@media screen and (max-width: 950px){
+    header{
+        justify-content: center;
+    }
+
+    .page-heading{
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .nav-bar{
+        margin: 1ch 15ch 0 15ch;
+    }
+}
