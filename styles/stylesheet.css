@@ -69,6 +69,10 @@ main{
     color: var(--main-text);
 }
 
+main a{
+    color: var(--main-text)
+}
+
 main ul{
     text-align: left;
     max-width: 80%;
