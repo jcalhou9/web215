@@ -6,6 +6,7 @@
     --header-footer-background: #070351;
     --body-background: linear-gradient(#00e9ff7d 20%, #00ffbb7d, #00e9ff7d 75%);
     --main-text: #070351;
+	font-size: 18px;
 }
 
 html{
@@ -69,20 +70,27 @@ main{
     color: var(--main-text);
 }
 
-main a{
+p, main a, main dl{
     color: var(--main-text)
 }
 
-main ul{
+main dl{
     text-align: left;
     max-width: 80%;
     margin-left: 10%;
-    list-style-type: disc;
 }
 
-main ol{
-    list-style-type: circle;
-    margin: 1ch;
+main dt {
+	margin-top:1ch;
+    margin-bottom:1ch;
+}
+
+main dd {
+    margin-top: .25ch;
+}
+
+strong {
+    font-size: 19px;
 }
 
 img{
