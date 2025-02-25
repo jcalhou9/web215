@@ -65,27 +65,35 @@ main{
     display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-    max-width: 80%;
-    margin-left: 10%;
+    max-width: 150ch;
+    margin: 0 auto;
     color: var(--main-text);
 }
 
-p, main a, main dl{
+main p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+p, main a, dl{
+    text-align: left;
     color: var(--main-text)
 }
 
-main dl{
+dl{
     text-align: left;
-    max-width: 80%;
+    max-width: 90%;
     margin-left: 10%;
 }
 
-main dt {
+dt {
 	margin-top:1ch;
     margin-bottom:1ch;
+    display: list-item;
 }
-
-main dd {
+dd{
+    display: list-item;
+    list-style-type: circle;
     margin-top: .25ch;
 }
 
@@ -104,6 +112,7 @@ footer{
 }
 
 footer p {
+    text-align: center;
     padding: 0;
     margin: 0 0 1ch 0;
 }
@@ -117,7 +126,6 @@ footer a, footer p{
     padding: 0 0 1ch 0;
     max-width: 70%;
     margin: 1ch auto;
-    border-bottom: 2px solid white;
 }
 
 .nav-links li{
