@@ -56,6 +56,7 @@ header{
 
 .nav-bar a{
     color: var(--header-footer-text);
+    text-decoration: none;
 }
 
 /* ----------------main------------- */
@@ -92,9 +93,17 @@ dt {
     display: list-item;
 }
 dd{
-    display: list-item;
-    list-style-type: circle;
     margin-top: .25ch;
+}
+
+dd ul{
+    margin: 0;
+    padding-left: 2ch;
+}
+
+dd li{
+    margin-top: .5ch;
+    list-style-type: decimal;
 }
 
 strong {
@@ -136,6 +145,7 @@ footer a, footer p{
 
 .nav-links a {
     color: var(--header-footer-text);
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1150px){
