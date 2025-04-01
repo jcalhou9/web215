@@ -106,10 +106,6 @@ dd li{
     list-style-type: decimal;
 }
 
-strong {
-    font-size: 19px;
-}
-
 img{
     max-width: 100%;
 }
