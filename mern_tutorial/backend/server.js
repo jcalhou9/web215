@@ -9,17 +9,18 @@ const app = express();
 
 const cors = require('cors');
 
-const allowedOrigins = ['https://mern-frontend-k55a.onrender.com'];
+const allowedOrigins = ['http://localhost:4000/','https://mern-frontend-k55a.onrender.com'];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log(`Blocked by CORS: ${origin}`);
+        callback(new Error('Not allowed by CORS'));
+      }
     }
-  }
-}));
+  }));
 
 // middleware
 app.use(express.json());

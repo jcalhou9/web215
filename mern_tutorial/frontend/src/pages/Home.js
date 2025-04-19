@@ -3,8 +3,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
-
-const API = process.env.REACT_APP_API_BASE_URL || '';
+import API from '../utils/apiBaseUrl';
 
 const Home = () => {
     const {workouts, dispatch} = useWorkoutsContext();
