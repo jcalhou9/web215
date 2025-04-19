@@ -27,7 +27,7 @@ const WorkoutDetails = ({ workout }) => {
   };
 
   const handleDelete = async () => {
-    const response = await fetch(`/api/workouts/${workout._id}`, {method: 'DELETE'}
+    const response = await fetch(`${API}/api/workouts/${workout._id}`, {method: 'DELETE'}
     );
 
     const json = await response.json();
