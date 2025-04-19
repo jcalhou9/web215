@@ -8,7 +8,18 @@ const workoutRoutes = require('./routes/workout.routes.js');
 const app = express();
 
 const cors = require('cors');
-app.use(cors());
+
+const allowedOrigins = ['https://mern-frontend-k55a.onrender.com'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 // middleware
 app.use(express.json());
