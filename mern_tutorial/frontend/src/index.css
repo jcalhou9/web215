@@ -151,6 +151,7 @@ input.error {
   justify-content: center;
   min-height: 50vh;
   text-align: center;
+  margin-left: 35%;
 }
 
 .loading-spinner {
