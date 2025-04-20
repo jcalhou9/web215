@@ -8,6 +8,9 @@ import API from '../utils/apiBaseUrl';
 const Home = () => {
     const {workouts, dispatch} = useWorkoutsContext();
     const [loading, setLoading] = useState(true);
+    const [retrying, setRetrying] = useState(false);
+    const [retryCount, setRetryCount] = useState(0);
+    const [failed, setFailed] = useState(false);
 
     useEffect(() => {
        const fetchWorkouts = async () => {
@@ -17,11 +20,18 @@ const Home = () => {
                 const json = await response.json();
                 if (response.ok) {
                     dispatch({ type: "SET_WORKOUTS", payload: json });
+                    setLoading(false);
                 }
             } catch (error) {
                 console.error("Error fetching workouts:", error);
-            } finally {
-                setLoading(false);
+                if (retryCount < 1) {
+                    setRetrying(true);
+                    setRetryCount(1);
+                    setTimeout(fetchWorkouts, 2000);
+                } else {
+                    setLoading(false);
+                    setFailed(true);
+                }
             }
         };
         fetchWorkouts();
@@ -31,7 +41,11 @@ const Home = () => {
             {loading ? (
                 <div className="loading">
                     <div className="loading-spinner"></div>
-                    <p>Waking up server...</p>
+                    <p>{retrying ? "Retrying server..." : "Waking up server..."}</p>
+                </div>
+            ) : failed ? (
+                <div className="loading">
+                    <p>Please try again later.</p>
                 </div>
             ) : (
                 <>
