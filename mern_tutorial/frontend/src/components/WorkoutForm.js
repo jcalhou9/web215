@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import {useState} from 'react'
+import {useWorkoutsContext} from "../hooks/useWorkoutsContext";
 import API from '../utils/apiBaseUrl';
+import {useAuthContext} from "../hooks/useAuthContext";
 
 const WorkoutForm = () => {
-    const { dispatch } = useWorkoutsContext()
+    const {dispatch} = useWorkoutsContext()
+    const {user} = useAuthContext()
     const [title, setTitle] = useState('')
     const [load, setLoad] = useState('')
     const [reps, setReps] = useState('')
@@ -12,13 +14,17 @@ const WorkoutForm = () => {
     
     const HandleSubmit = async (e) => {
         e.preventDefault()
+        if (!user) {
+            setError('You must be logged in')
+            return
+        }
 
         const workout = { title, load, reps }
 
         const response = await fetch(`${API}/api/workouts`, {
             method: 'POST',
             body: JSON.stringify(workout),
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}`}
         })
 
         const json = await response.json()
@@ -34,7 +40,7 @@ const WorkoutForm = () => {
             setError(null)
             setEmptyFields([])
             console.log('New workout added:', json)
-            dispatch({ type: 'CREATE_WORKOUT', payload: json })
+            dispatch({type: 'CREATE_WORKOUT', payload: json})
         }
     }
     return (
@@ -47,7 +53,7 @@ const WorkoutForm = () => {
                 value={title}
                 className={emptyFields.includes('title') ? 'error' : ''}
             />
-            <label>Load (in kg):</label>
+            <label>Weight (lbs):</label>
             <input
                 type="number"
                 onChange={(e) => setLoad(e.target.value)}
