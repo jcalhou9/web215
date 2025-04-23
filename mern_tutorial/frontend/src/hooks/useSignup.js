@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {useAuthContext} from './useAuthContext';
+import API from '../utils/apiBaseUrl';
 
 export const useSignup = () => {
     const [error, setError] =useState(null);
@@ -7,7 +8,7 @@ export const useSignup = () => {
 
     const signup = async (username, password) => {
         setError(null);
-        const response = await fetch('/api/userRoutes/signup', {
+        const response = await fetch(`${API}/api/userRoutes/signup`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({username, password})
