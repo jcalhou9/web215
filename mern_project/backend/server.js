@@ -13,7 +13,7 @@ const cors = require('cors');
 //allowed frontend origins
 const allowedOrigins = [
     'http://localhost:3000',
-    'https:// ******UPDATE FOR DEPLOYMENT***** .onrender.com'
+    'https://https://assignmentmanager-8mn3.onrender.com'
 ];
 
 //middleware
