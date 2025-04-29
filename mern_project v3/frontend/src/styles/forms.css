@@ -1,0 +1,141 @@
+/* forms (login/register) */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+  max-width: 32ch;
+  margin: 4ch auto;
+}
+
+.auth-form input {
+  font-size: 1rem;
+  padding: 0.8ch 1ch;
+  border-radius: 0.5ch;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.auth-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.6ch 1.2ch;
+  border-radius: 0.5ch;
+  width: auto;
+  align-self: flex-start;
+  font-size: 1rem;
+}
+
+/* login/register titles */
+.login h2, .register h2 {
+  text-align: center;
+  margin-bottom: 1ch;
+}
+
+/* forms (add/edit) */
+.assignment-form, .edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+  max-width: 35ch;
+  margin: 2ch 0;
+}
+
+.assignment-form input, .edit-form input, .assignment-form select, .edit-form select {
+  font-size: 1rem;
+  padding: 0.5ch 1ch;
+  border-radius: 0.5ch;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* status and due date */
+.assignment-form .form-row, .edit-form .form-row {
+  display: flex;
+  gap: 1ch;
+}
+
+.assignment-form .form-row input, .assignment-form .form-row select, .edit-form .form-row input, .edit-form .form-row select {
+  flex: 1;
+}
+
+/* form buttons */
+.assignment-form button, .edit-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.6ch 1.2ch;
+  border-radius: 0.5ch;
+  width: auto;
+  align-self: flex-start;
+  font-size: 1rem;
+}
+
+/* assignments */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assignment-item {
+  background-color: white;
+  border: 1px solid var(--secondary-color);
+  padding: 2ch;
+  margin-bottom: 1ch;
+  border-radius: 1ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+  max-width: 100ch;
+}
+
+.assignment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.assignment-text strong {
+  font-size: 1.5rem;
+}
+
+.assignment-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5ch;
+}
+
+.assignment-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5ch;
+  font-size: 1rem;
+  color: var(--dark-text);
+}
+
+.assignment-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5ch;
+  align-self: flex-end;
+}
+
+.assignment-buttons button {
+  font-size: 1rem;
+  padding: 0.6ch 1.2ch;
+  border-radius: 0.5ch;
+  border: 1px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  width: auto;
+  min-width: 6ch;
+}
+
+@media (max-width: 600px) {
+  .assignment-form, .edit-form, .auth-form {
+    max-width: 90%;
+  }
+}
